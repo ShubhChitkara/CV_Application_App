@@ -23,13 +23,13 @@ function Resultone({
       <h4>School-Name: {schoolname}</h4>
       <h5>Degree-Name: {degreename}</h5>
       <h6>
-        Study-Timeline: {startofstudy}-{endofstudy}
+        Study-Timeline: {startofstudy}   to   {endofstudy}
       </h6>
       <h4>Company-Name: {companyname}</h4>
       <h5>Position-Title: {positiontitle}</h5>
       <h6>Responsibilties: {responsibilities}</h6>
       <h6>
-        Work-Timeline: {startofwork}-{endofwork}
+        Work-Timeline: {startofwork}   to   {endofwork}
       </h6>
       <button className="edit" onClick={editbtn}>
         Edit
