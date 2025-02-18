@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Resultone from "./FinalResultone.jsx";
 
 function Form() {
@@ -16,7 +15,7 @@ function Form() {
   const [startofwork, setStartOfWork] = useState("");
   const [endofwork, setEndOfWork] = useState("");
   const [editmodeinuse, setEditModeInUse] = useState(false);
-  
+
   if (!editmodeinuse) {
     return (
       <div>
@@ -33,7 +32,7 @@ function Form() {
           responsibilities={responsibilities}
           startofwork={startofwork}
           endofwork={endofwork}
-          editbtn={setEditModeInUse(true)}
+          editbtn={() => setEditModeInUse(true)} // Pass the function reference here
         />
       </div>
     );
@@ -42,7 +41,8 @@ function Form() {
       <div>
         <form
           onSubmit={(event) => {
-            event.preventDefault;
+            event.preventDefault();
+            setEditModeInUse(false); // Call the preventDefault properly
           }}
         >
           <div>
@@ -52,9 +52,7 @@ function Form() {
                 type="text"
                 name="name"
                 value={name}
-                onChange={(event) => {
-                  setName(event.target.value);
-                }}
+                onChange={(event) => setName(event.target.value)}
               />
             </label>
           </div>
@@ -65,9 +63,7 @@ function Form() {
                 type="email"
                 name="email"
                 value={email}
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                }}
+                onChange={(event) => setEmail(event.target.value)}
               />
             </label>
           </div>
@@ -78,9 +74,7 @@ function Form() {
                 type="number"
                 name="phone"
                 value={phone}
-                onChange={(event) => {
-                  setPhone(event.target.value);
-                }}
+                onChange={(event) => setPhone(event.target.value)}
               />
             </label>
           </div>
@@ -91,9 +85,7 @@ function Form() {
                 type="text"
                 name="schoolname"
                 value={schoolname}
-                onChange={(event) => {
-                  setSchoolName(event.target.value);
-                }}
+                onChange={(event) => setSchoolName(event.target.value)}
               />
             </label>
           </div>
@@ -104,9 +96,7 @@ function Form() {
                 type="text"
                 name="degreename"
                 value={degreename}
-                onChange={(event) => {
-                  setDegreeName(event.target.value);
-                }}
+                onChange={(event) => setDegreeName(event.target.value)}
               />
             </label>
           </div>
@@ -117,9 +107,7 @@ function Form() {
                 type="date"
                 name="startofstudy"
                 value={startofstudy}
-                onChange={(event) => {
-                  setStartOfStudy(event.target.value);
-                }}
+                onChange={(event) => setStartOfStudy(event.target.value)}
               />
             </label>
           </div>
@@ -130,9 +118,7 @@ function Form() {
                 type="date"
                 name="endofstudy"
                 value={endofstudy}
-                onChange={(event) => {
-                  setEndOfStudy(event.target.value);
-                }}
+                onChange={(event) => setEndOfStudy(event.target.value)}
               />
             </label>
           </div>
@@ -143,9 +129,7 @@ function Form() {
                 type="text"
                 name="companyname"
                 value={companyname}
-                onChange={(event) => {
-                  setCompanyName(event.target.value);
-                }}
+                onChange={(event) => setCompanyName(event.target.value)}
               />
             </label>
           </div>
@@ -156,9 +140,7 @@ function Form() {
                 type="text"
                 name="positiontitle"
                 value={positiontitle}
-                onChange={(event) => {
-                  setPositionTitle(event.target.value);
-                }}
+                onChange={(event) => setPositionTitle(event.target.value)}
               />
             </label>
           </div>
@@ -169,9 +151,7 @@ function Form() {
                 type="text"
                 name="responsibilities"
                 value={responsibilities}
-                onChange={(event) => {
-                  setResponsibilities(event.target.value);
-                }}
+                onChange={(event) => setResponsibilities(event.target.value)}
               />
             </label>
           </div>
@@ -182,9 +162,7 @@ function Form() {
                 type="date"
                 name="startofwork"
                 value={startofwork}
-                onChange={(event) => {
-                  setStartOfWork(event.target.value);
-                }}
+                onChange={(event) => setStartOfWork(event.target.value)}
               />
             </label>
           </div>
@@ -195,22 +173,12 @@ function Form() {
                 type="date"
                 name="endofwork"
                 value={endofwork}
-                onChange={(event) => {
-                  setEndOfWork(event.target.value);
-                }}
+                onChange={(event) => setEndOfWork(event.target.value)}
               />
             </label>
           </div>
           <div>
-            <button
-              onClick={(event) => {
-                event.preventDefault();
-                setEditModeInUse(false);
-                console.log(editmodeinuse);
-              }}
-            >
-              Submit
-            </button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
