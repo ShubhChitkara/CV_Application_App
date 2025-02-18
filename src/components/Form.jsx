@@ -14,7 +14,7 @@ function Form() {
   const [responsibilities, setResponsibilities] = useState("");
   const [startofwork, setStartOfWork] = useState("");
   const [endofwork, setEndOfWork] = useState("");
-  const [editmodeinuse, setEditModeInUse] = useState(false);
+  const [editmodeinuse, setEditModeInUse] = useState(true);
 
   if (!editmodeinuse) {
     return (
